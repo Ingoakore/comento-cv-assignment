@@ -1,0 +1,7 @@
+# Python - 파이썬이 자동으로 만드는 캐시 파일 무시
+__pycache__/
+*.pyc
+
+
+# Pytest - pytest가 자동으로 만드는 캐시 폴더 무시
+.pytest_cache/
