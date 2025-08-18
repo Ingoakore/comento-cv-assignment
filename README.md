@@ -7,7 +7,7 @@
 
 * [**➡️ 1주차: Git \& OpenCV 기초**](./week1/)
 * [**➡️ 2주차: Unit Test 및 2D→3D 변환**](./week2/)
-* [**➡️ 3주차: (업무 진행 예정)**](./week3/)
+* [**➡️ 3주차: AI 모델 학습 및 성능 분석**](./week3/)
 * [**➡️ 4주차: (업무 진행 예정)**](./week4/)
 * [**➡️ 5주차: (업무 진행 예정)**](./week5/)
 
@@ -18,3 +18,4 @@
 * Git \& GitHub
 * Hugging Face Datasets
 * Pytest
+* YOLOv8
