@@ -33,6 +33,14 @@
 ### 3. 최종 모델 시각적 검증
 - `5_run_detection_all_models.py` 스크립트를 사용하여, 4개의 훈련된 모델이 모두 동일한 테스트 이미지를 어떻게 예측하는지 시각적으로 확인하고, 성능 차이를 직접 비교했습니다.
 
+## 데이터셋 준비
+이 업무를 실행하기 위해서는 '가위-바위-보' 데이터셋이 필요합니다. 아래 순서에 따라 데이터셋을 준비해주세요.
+
+1.  아래 Roboflow 링크에 접속하여 데이터셋을 다운로드합니다.
+    - **데이터셋 링크:** [Rock Paper Scissors Dataset by Roboflow](https://universe.roboflow.com/roboflow-58fyf/rock-paper-scissors-sxsw)
+2.  다운로드 시, **Format은 'YOLO v8'**으로 선택해야 합니다.
+3.  다운로드한 zip 파일의 압축을 푼 뒤, 그 안의 모든 내용물(`train`, `valid`, `test` 폴더 및 `data.yaml` 파일)을 이 업무 폴더(`task_ai_model_analysis`) 안에 있는 **`datasets` 폴더**로 옮겨주세요.
+
 ## 실행 순서
 ```bash
 # 1. 3주차 업무의 src 폴더로 이동합니다.

@@ -22,3 +22,13 @@ __pycache__/
 **/input_data/*
 # 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
 !**/input_data/.gitkeep
+
+# 프로젝트 내의 '모든' input_data 폴더 안의 모든 파일(*)을 무시합니다.
+**/input_data/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/input_data/.gitkeep
+
+# 프로젝트 내의 '모든' datasets 폴더 안의 모든 파일(*)을 무시합니다.
+**/datasets/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/datasets/.gitkeep
