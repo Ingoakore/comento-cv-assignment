@@ -1,7 +1,42 @@
-# Python - 파이썬이 자동으로 만드는 캐시 파일 무시
+# Python 캐시 파일 무시
 __pycache__/
 *.pyc
 
-
-# Pytest - pytest가 자동으로 만드는 캐시 폴더 무시
+# Pytest 캐시 폴더 무시
 .pytest_cache/
+
+# VSCode 설정 폴더 무시
+.vscode/
+
+# 프로젝트 내의 '모든' outputs 폴더 안의 모든 파일(*)을 무시합니다.
+**/outputs/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/outputs/.gitkeep
+
+# 프로젝트 내의 '모든' data 폴더 안의 모든 파일(*)을 무시합니다.
+**/data/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/data/.gitkeep
+
+# 프로젝트 내의 '모든' input_data 폴더 안의 모든 파일(*)을 무시합니다.
+**/input_data/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/input_data/.gitkeep
+
+# 프로젝트 내의 '모든' input_data 폴더 안의 모든 파일(*)을 무시합니다.
+**/input_data/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/input_data/.gitkeep
+
+# 프로젝트 내의 '모든' datasets 폴더 안의 모든 파일(*)을 무시합니다.
+**/datasets/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/datasets/.gitkeep
+
+# 프로젝트 내의 '모든' runs 폴더 안의 모든 파일(*)을 무시합니다.
+**/runs/*
+# 단, 그 안에 있는 .gitkeep 파일은 예외로 합니다.
+!**/runs/.gitkeep
+
+# YOLOv8이 자동으로 다운로드하는 모델 가중치 파일(*.pt)을 무시합니다.
+*.pt
