@@ -10,7 +10,7 @@
 
 * **`src/`**: 모든 Python 소스 코드와 각 스크립트에 대한 상세 설명서가 들어있습니다.
 * **`datasets/`**: 모델 훈련에 사용된 데이터셋입니다.
-* **`input\_data/`**: 훈련된 모델을 테스트하기 위한 새로운 이미지입니다.
+* **`input_data/`**: 훈련된 모델을 테스트하기 위한 새로운 이미지입니다.
 * **`outputs/`**: 최종 결과물이 저장되는 폴더입니다.
 * **`runs/`**: 모델 훈련 과정이 자동으로 기록되는 폴더입니다.
 
@@ -22,16 +22,16 @@
 
    * **데이터셋 링크:** [Crack and Pothole Computer Vision Model](https://universe.roboflow.com/road-damage-detection-n2xkq/crack-and-pothole-bftyl)
 
-2. 다운로드 시, \*\*Format은 'YOLO v8'\*\*으로 선택해야 합니다.
-3. 다운로드한 zip 파일의 압축을 푼 뒤, 그 안의 모든 내용물을 이 업무 폴더(`task\_road\_damage\_analysis`) 안에 있는 **`datasets` 폴더**로 옮겨주세요.
+2. 다운로드 시, **Format은 'YOLO v8'**으로 선택해야 합니다.
+3. 다운로드한 zip 파일의 압축을 푼 뒤, 그 안의 모든 내용물을 이 업무 폴더(`task_road_damage_analysis`) 안에 있는 **`datasets` 폴더**로 옮겨주세요.
 
 ## 4\. 실행 순서
 
-1. **모델 훈련 및 분석 (선택 사항):** `src/model\_training` 폴더의 스크립트들을 순서대로 실행하여, 직접 모델을 훈련하고 성능을 비교 분석할 수 있습니다.
+1. **모델 훈련 및 분석 (선택 사항):** `src/model_training` 폴더의 스크립트들을 순서대로 실행하여, 직접 모델을 훈련하고 성능을 비교 분석할 수 있습니다.
 2. **최종 어플리케이션 실행:** `src` 폴더로 이동한 뒤, 아래 명령어를 실행하여 GUI 프로그램을 시작합니다.
 
 &nbsp;   ```bash
-    cd week4/task\_road\_damage\_analysis/src
-    python run\_road\_damage\_analyzer.py
+    cd week4/task_road_damage_analysis/src
+    python run_road_damage_analyzer.py
     ```
 
