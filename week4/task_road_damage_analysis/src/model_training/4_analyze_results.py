@@ -4,14 +4,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+# 실행 위치와 상관없이 동작하도록 프로젝트 폴더(task_road_damage_analysis) 기준 절대 경로를 사용합니다.
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
 if __name__ == '__main__':
     
     # 분석할 실험 모델들의 이름과 해당 훈련 결과 파일(results.csv)의 경로를 정의합니다.
     # 각 CSV 파일은 에포크별 훈련 및 검증 성능 지표를 담고 있습니다.
     experiments = {
-        "Baseline (YOLOv8s, 30e)": "../../runs/baseline/road_damage_detector_baseline/results.csv",
-        "Over-Tuned (100e, All Aug)": "../../runs/tuned/road_damage_detector_over_tuned/results.csv",
-        "Refined-Tuned (50e, Select Aug)": "../../runs/tuned/road_damage_detector_refined_tuned/results.csv"
+        "Baseline (YOLOv8s, 30e)": os.path.join(BASE_DIR, 'runs', 'baseline', 'road_damage_detector_baseline', 'results.csv'),
+        "Over-Tuned (100e, All Aug)": os.path.join(BASE_DIR, 'runs', 'tuned', 'road_damage_detector_over_tuned', 'results.csv'),
+        "Refined-Tuned (50e, Select Aug)": os.path.join(BASE_DIR, 'runs', 'tuned', 'road_damage_detector_refined_tuned', 'results.csv')
     }
 
     # Matplotlib를 사용하여 3개의 서브플롯(그래프)을 담을 figure와 axes 객체를 생성합니다.
@@ -28,7 +31,7 @@ if __name__ == '__main__':
             # 지정된 경로에 파일이 있는지 확인하고, 없으면 백업 경로를 시도합니다.
             # 이는 Ultralytics가 같은 이름으로 훈련 시 폴더명 뒤에 숫자를 추가하는 경우를 대비합니다.
             if not os.path.exists(path):
-                path_alt = path.replace("/results.csv", "2/results.csv")
+                path_alt = path.replace(os.sep + "results.csv", "2" + os.sep + "results.csv")
                 if os.path.exists(path_alt):
                     path = path_alt
                 else:
@@ -81,7 +84,8 @@ if __name__ == '__main__':
     plt.tight_layout(rect=[0, 0.03, 1, 0.96])
     
     # 완성된 그래프를 이미지 파일로 저장합니다.
-    output_path = "../../outputs/performance_comparison_graph.png"
+    output_path = os.path.join(BASE_DIR, 'outputs', 'performance_comparison_graph.png')
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
     print(f"\n성공: 비교 분석 그래프가 '{output_path}'에 저장되었습니다.")
     

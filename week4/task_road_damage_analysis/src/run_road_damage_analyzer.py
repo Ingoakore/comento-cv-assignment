@@ -16,6 +16,9 @@ from utils_road_damage_analyzer import (
     create_3d_plot_image
 )
 
+# 실행 위치와 상관없이 동작하도록 프로젝트 폴더(task_road_damage_analysis) 기준 절대 경로를 사용합니다.
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 # AI 도로 파손 분석기 애플리케이션의 메인 GUI 클래스입니다.
 class RoadDamageAnalyzerApp:
     def __init__(self, root):
@@ -26,8 +29,8 @@ class RoadDamageAnalyzerApp:
         
         # 사용할 YOLO 모델들의 정보(경로, 저장 이름, 인스턴스)를 딕셔너리로 관리합니다.
         self.models = {
-            "기준 모델 (Baseline)": {"path": "../runs/baseline/road_damage_detector_baseline/weights/best.pt", "savename": "baseline", "instance": None},
-            "최종 튜닝 모델 (Tuned)": {"path": "../runs/tuned/road_damage_detector_refined_tuned/weights/best.pt", "savename": "tuned", "instance": None}
+            "기준 모델 (Baseline)": {"path": os.path.join(BASE_DIR, "runs", "baseline", "road_damage_detector_baseline", "weights", "best.pt"), "savename": "baseline", "instance": None},
+            "최종 튜닝 모델 (Tuned)": {"path": os.path.join(BASE_DIR, "runs", "tuned", "road_damage_detector_refined_tuned", "weights", "best.pt"), "savename": "tuned", "instance": None}
         }
         # 분석할 이미지의 경로와 대시보드 이미지를 저장할 변수를 초기화합니다.
         self.image_path = ""
@@ -231,7 +234,7 @@ class RoadDamageAnalyzerApp:
             return
         
         # 저장할 디렉토리를 생성합니다.
-        output_dir = "../outputs/final_dashboard_results"
+        output_dir = os.path.join(BASE_DIR, "outputs", "final_dashboard_results")
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
         

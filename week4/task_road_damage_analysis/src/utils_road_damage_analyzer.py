@@ -32,7 +32,8 @@ def draw_korean_text(image, text, position, font, color):
     img_pil = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     draw = ImageDraw.Draw(img_pil)
     # 지정된 위치, 폰트, 색상으로 텍스트를 그립니다.
-    draw.text(position, text, font=font, fill=color)
+    # color는 OpenCV와 같은 BGR 순서로 받으므로, PIL 이미지(RGB)에 맞게 순서를 뒤집습니다.
+    draw.text(position, text, font=font, fill=tuple(color[::-1]))
     # 다시 OpenCV 이미지 형식으로 변환하여 반환합니다.
     return cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
 

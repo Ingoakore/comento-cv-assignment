@@ -4,7 +4,9 @@ from ultralytics import YOLO
 import os
 
 # 데이터셋의 YAML 파일 경로를 정의합니다.
-DATASET_YAML_PATH = os.path.join('..', '..', 'datasets', 'data.yaml')
+# 실행 위치와 상관없이 동작하도록 프로젝트 폴더(task_road_damage_analysis) 기준 절대 경로를 사용합니다.
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+DATASET_YAML_PATH = os.path.join(BASE_DIR, 'datasets', 'data.yaml')
 
 if __name__ == '__main__':
     print("===== 기준(Baseline) 모델 훈련을 시작합니다. =====")
@@ -22,7 +24,7 @@ if __name__ == '__main__':
         data=DATASET_YAML_PATH, 
         epochs=30,
         imgsz=640, 
-        project='../../runs/baseline', 
+        project=os.path.join(BASE_DIR, 'runs', 'baseline'), 
         name='road_damage_detector_baseline'
     )
     
