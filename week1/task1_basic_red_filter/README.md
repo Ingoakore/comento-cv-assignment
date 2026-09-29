@@ -28,3 +28,4 @@ cd week1/task1_basic_red_filter
 
 # 파이썬 스크립트 실행
 python run_basic_task.py
+```

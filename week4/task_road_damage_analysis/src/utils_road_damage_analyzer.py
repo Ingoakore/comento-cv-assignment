@@ -9,7 +9,10 @@ import os
 from PIL import ImageFont, ImageDraw, Image
 
 # 폰트 파일을 로드하여 한글 텍스트를 이미지에 그릴 수 있도록 설정합니다.
+# 프로젝트 폴더의 fonts/malgun.ttf를 우선 사용하고, 없으면 Windows 기본 맑은 고딕을 사용합니다.
 FONT_PATH = os.path.join(os.path.dirname(__file__), "..", "fonts", "malgun.ttf")
+if not os.path.exists(FONT_PATH):
+    FONT_PATH = os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts", "malgun.ttf")
 try:
     # 다양한 용도의 한글 폰트를 로드합니다.
     FONT_TITLE = ImageFont.truetype(FONT_PATH, 30)

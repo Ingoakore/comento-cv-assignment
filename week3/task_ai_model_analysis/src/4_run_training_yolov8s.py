@@ -22,7 +22,7 @@ if __name__ == '__main__':
         name='yolov8s'
     )
 
-    print("YOLOv8n 모델 훈련 완료.")
+    print("YOLOv8s 모델 훈련 완료.")
     
     # 학습된 모델의 성능을 평가합니다.
     print("\n[Analysis] YOLOv8s 모델의 성능을 평가합니다...")

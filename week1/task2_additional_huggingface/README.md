@@ -31,3 +31,4 @@ cd week1/task2_additional_huggingface
 
 # 파이썬 스크립트 실행
 python run_additional_task.py
+```

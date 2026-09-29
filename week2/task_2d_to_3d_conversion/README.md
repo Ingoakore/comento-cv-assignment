@@ -43,7 +43,8 @@ python depth_processing.py
 pytest
 
 # 4. 생성된 3D 데이터를 시각화하여 확인합니다.
-python visualize_point_cloud.py```
+python visualize_point_cloud.py
+```
 
 ## 결과
 - **데이터:** `outputs` 폴더 안에 `depth_map.jpg`와 `point_cloud.npy` 파일이 생성됩니다.
